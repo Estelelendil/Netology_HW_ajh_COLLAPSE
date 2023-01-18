@@ -20,9 +20,8 @@ test_script:
   - npm run lint && npm test  # скрипт тестирования
 
 deploy_script:  # скрипт развёртывания
-  - "echo \"TEST_VAR: $TEST_VAR\""
   - git config --global credential.helper store
-  - git config --global user.name AppVeyor
-  - git config --global user.email ci@appveyor.com
+  - git config --global user.name Estelelendil
+  - git config --global user.email estelelendil@mail.ru
   - "echo \"https://$GITHUB_TOKEN:x-oauth-basic@github.com\" > \"$HOME/.git-credentials\""
   - npx push-dir --dir=dist --branch=gh-pages --force --verbose
